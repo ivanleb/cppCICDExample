@@ -18,7 +18,16 @@ set_target_properties(helloworld_cli helloworld test_version PROPERTIES
       COMPILE_OPTIONS "-Wpendantic;-Wall;-Wextra"
 )
 
-target_link_libraries( test_version
+set_target_properties(test_version PROPERTIES
+      COMPILE_DEFENITIONS BOOST_TEST_DYN_LINK
+      INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
+)
+
+target_link_libraries(helloworld_cli
+      helloworld
+)
+
+target_link_libraries(test_version
       ${Boost_LIBRARIES}
       helloworld
 )
