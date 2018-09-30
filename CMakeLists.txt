@@ -24,12 +24,12 @@ set_target_properties(test_version PROPERTIES
 )
 
 target_link_libraries(helloworld_cli
-      helloworld
+    helloworld
 )
 
 target_link_libraries(test_version
-      ${Boost_LIBRARIES}
-      helloworld
+    ${Boost_LIBRARIES}
+    helloworld
 )
 
 install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
